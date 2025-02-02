@@ -1,0 +1,13 @@
+The following CSS code causes an unexpected layout issue in some browsers:
+
+```css
+div {
+  display: flex;
+  justify-content: space-between;
+}
+div > p {
+  width: 50%;
+}
+```
+
+This code intends to distribute two paragraphs evenly across a flex container, but some browsers may not render this correctly if the total width of the paragraphs exceeds the available space.
