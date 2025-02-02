@@ -1,0 +1,19 @@
+The following CSS code provides a solution that handles the overflow case more consistently:
+
+```css
+div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Ensure the container takes up full available width */
+}
+div > p {
+  width: calc(50% - 10px); /* Subtract some space to account for margins or padding */
+  flex-shrink: 1; /* Allow elements to shrink if necessary */
+}
+```
+
+This solution involves:
+
+1. **Explicit Width:** Setting an explicit width for the container ensures that it uses all available space.
+2. **`calc()` Function:** This dynamically calculates the width of the paragraphs, subtracting a small value to account for any margins or padding, preventing overflow.
+3. **`flex-shrink: 1;`:** This allows the paragraph elements to shrink proportionally if their combined width exceeds the container's width, preventing overflow and ensuring consistent layout.
